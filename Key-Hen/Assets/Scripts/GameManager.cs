@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +14,13 @@ public class GameManager : MonoBehaviour
     private bool _paused = false;
     private bool _gameOver = false;
 
+    private int _keyInPad = 0;
+    private int _maxKeyInPad = 8;
+    private int _keysOut = 0;
+    private int _maxKeysOut = 12;
+    
+    private float _health = 3f;
+
     public AudioSource _musicManager;
 
     public TextMeshProUGUI _txtTiempo;
@@ -20,6 +28,14 @@ public class GameManager : MonoBehaviour
     private List<GameObject> _listadoTeclas;
 
     public float _startWait;
+    public Image imageHealth;
+
+    public int KeyInPad { get => _keyInPad; set => _keyInPad = value; }
+    public int MaxKeyInPad { get => _maxKeyInPad; set => _maxKeyInPad = value; }
+    public int KeysOut { get => _keysOut; set => _keysOut = value; }
+    public int MaxKeysOut { get => _maxKeysOut; set => _maxKeysOut = value; }
+    
+    public float Health { get => _health; set => _health = value; }
 
     void Awake()
     {
@@ -37,12 +53,49 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
+    public bool isPadFull()
+    {
+        return KeyInPad >= MaxKeyInPad;
+    }
+
+    public bool isOutFull()
+    {
+        return KeysOut >= MaxKeysOut;
+    }
+
+    public void addKeytoPad()
+    {
+        KeyInPad++;
+        KeysOut--;
+    }
+
+    public void addKeyOut()
+    {
+        KeysOut++;
+    }
+
+    public void takeDamage()
+    {
+        Debug.Log(Health);
+        Health--;
+        Debug.Log(Health);
+        updateUI();
+    }
+
+    private void updateUI()
+    {
+        imageHealth.fillAmount = Health / 3;
+
+        Debug.Log(Health/3f);
+
+        //TODO: Actualizar teclas tambien aqui y reutilizamos codigo
+    }
+
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(_startWait);
         //TODO: Logica de juego, referencia a Pajaro para iniciar su movimiento y el del juegador
         Time.timeScale = 1;
-
     }
 
     void Update()
