@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private Transform positionInKeyboard;
+    private Vector3 positionInKeyboard;
     public string _name = "";
-    public KeyboardController keyboardController;
-    public PadManager padManager;
-    public PositionControler positionControler;
     private bool _inKeyboard =true;
     private bool _inPad = false;
     private bool _outKeyboard = false;
@@ -20,7 +17,8 @@ public class Key : MonoBehaviour
 
     private void Start()
     {
-        positionInKeyboard = gameObject.transform;
+
+        positionInKeyboard = gameObject.transform.position;
     }
 
     public void moveOut()
@@ -47,7 +45,11 @@ public class Key : MonoBehaviour
 
     public void moveTo(Transform position)
     {
-        transform.Translate(positionInKeyboard.transform.position);
+        transform.position = position.position;
+    }
+    public void moveTo(Vector3 position)
+    {
+        transform.position = position;
     }
 
     public void outOfGame()

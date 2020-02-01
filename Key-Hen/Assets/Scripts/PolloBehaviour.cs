@@ -17,14 +17,22 @@ public class PolloBehaviour : MonoBehaviour
     // getters and setters
     public Vector3 Destino { get => destino; set => destino = value; }
 
+    public  KeyboardController keyboardController;
+
     // Start is called before the first frame update
     void Start()
     {
+        while (!keyboardController.hasArrayReady())
+        {
+
+        }
         destino.y = transform.position.y;
         newVector.y = transform.position.y;
         lastChangeTime = Time.time;
 
         StartCoroutine(MoveDuck());
+
+        keyboardController.dropOutKey(1);
     }
 
     // Update is called once per frame
@@ -43,8 +51,8 @@ public class PolloBehaviour : MonoBehaviour
         newVector.x = transform.position.x;
         newVector.z = transform.position.z;
 
-    Debug.Log(Vector3.Distance(transform.position, Destino));
-        Debug.Log((movement * 2));
+   // Debug.Log(Vector3.Distance(transform.position, Destino));
+    //    Debug.Log((movement * 2));
 
         // MOVE BERD
         Vector3 desp = Vector3.MoveTowards(transform.position, Destino, Time.deltaTime * movement) - transform.position;

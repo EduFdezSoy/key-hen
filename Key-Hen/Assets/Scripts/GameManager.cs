@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
     //Minus -1 health when called
     public void takeDamage()
     {
-        Debug.Log(Health);
+        //Debug.Log(Health);
         Health--;
-        Debug.Log(Health);
+        //Debug.Log(Health);
         updateUI();
     }
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     private void updateUI()
     {
         imageHealth.fillAmount = Health / 3;
-        Debug.Log(Health/3f);
+       // Debug.Log(Health/3f);
         _txtTiempo.text = gameTime.ToString() + " s";
         _txtPoints.text = Points + " pts";
     }
