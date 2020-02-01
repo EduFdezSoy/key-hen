@@ -6,7 +6,7 @@ using UnityEngine;
 public class PolloBehaviour : MonoBehaviour
 {
     // public fields
-    float movement = 0.1f;
+    float movement = 5f;
     float timeToMove = 0.001f;
 
     // private fields
@@ -46,27 +46,10 @@ public class PolloBehaviour : MonoBehaviour
     Debug.Log(Vector3.Distance(transform.position, Destino));
         Debug.Log((movement * 2));
 
-        if (Vector3.Distance(transform.position, Destino) < (1))
-        {
-            // BERD IS ON THE TARGET
-            Debug.Log("estoy");
-        }
-        else
-        {
-            // MOVE BERD
-            if (Destino.x > transform.position.x)
-                newVector.x = transform.position.x + movement;
-            else if (Destino.x < transform.position.x)
-                newVector.x = transform.position.x - movement;
+        // MOVE BERD
+        Vector3 desp = Vector3.MoveTowards(transform.position, Destino, Time.deltaTime * movement) - transform.position;
+        transform.position += desp;
 
-            if (Destino.z > transform.position.z)
-                newVector.z = transform.position.z + movement;
-            else if (Destino.z < transform.position.z)
-                newVector.z = transform.position.z - movement;
-
-
-            transform.position = newVector;
-        }
     
         yield return new WaitForSeconds(timeToMove);
         StartCoroutine(MoveDuck());
