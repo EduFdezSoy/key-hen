@@ -7,23 +7,30 @@ public class PositionControler : MonoBehaviour
 {
     GameObject _fatherPositions;
     public Transform[] _positions;
-    protected bool[] filledPositions;
-    protected string[] filledKeycode;
+    protected bool[] filledPositions = new bool[10];
+    protected string[] filledKeycode = new string[10];
+    public KeyboardController keyboardController;
+    public PadManager padManager;
 
+    private GameObject[] keyboardArray;
     private void Start()
     {
-        filledPositions = new bool[_positions.Length];
-        filledKeycode = new string[_positions.Length];
+        while (!keyboardController.hasArrayReady())
+        {
+
+        }
+        keyboardArray = keyboardController.getArray();
     }
 
-    public int isFilledOut(string keycode)
+    public int isFilledOut(Key keycode)
     {
         for (int i = 0; i < filledPositions.Length; i++)
         {
             if (!filledPositions[i])
             {
                 fillSpace(i);
-                fillKeyCode(i, keycode);
+                fillKeyCode(i, keycode._name);
+                keycode.moveTo(_positions[i]);
                 return i;
             }
         }
@@ -40,9 +47,18 @@ public class PositionControler : MonoBehaviour
         filledPositions[pos] = true;
     }
 
-    public void takeLetter(int pos)
+    public void takeLetter(Key keycode)
     {
-        filledPositions[pos] = false;
-        filledKeycode[pos] = String.Empty;
+        keycode.moveToPad();
+        for (int i = 0; i < filledKeycode.Length; i++)
+        {
+            if (filledKeycode[i].Equals(keycode._name))
+            {
+                filledPositions[i] = false;
+                // if -1 mata la pieza
+                keycode.moveToPad();
+                padManager.isFilledOut(keycode);
+            }
+        }
     }
 }

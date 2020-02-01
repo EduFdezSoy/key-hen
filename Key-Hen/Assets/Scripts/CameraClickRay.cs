@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraClickRay : MonoBehaviour
 {
+    public PositionControler positionControler;
     void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
@@ -16,7 +17,7 @@ public class CameraClickRay : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Key>().OutKeyboard)
                     {
-                        hit.collider.gameObject.GetComponent<Key>().moveToPad();
+                        positionControler.takeLetter( hit.collider.gameObject.GetComponent<Key>());
                     }
                 }
             }

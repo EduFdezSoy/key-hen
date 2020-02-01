@@ -5937,6 +5937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5208f8723f143469225277dc329fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysOnKeyboardInit: []
 --- !u!4 &1056700106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5499139629322848565, guid: 525f186c6c471684dbb8235572bb9271,
@@ -9009,6 +9010,7 @@ MonoBehaviour:
   - {fileID: 721500116}
   - {fileID: 1608643615}
   - {fileID: 980920325}
+  keyboardController: {fileID: 1018943173}
 --- !u!1001 &1787036653
 PrefabInstance:
   m_ObjectHideFlags: 0
