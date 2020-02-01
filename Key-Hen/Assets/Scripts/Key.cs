@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class Key : MonoBehaviour
 {
     private Transform positionInKeyboard;
     public string _name = "";
+    public KeyboardController keyboardController;
+    public PadManager padManager;
+    public PositionControler positionControler;
     private bool _inKeyboard =true;
     private bool _inPad = false;
     private bool _outKeyboard = false;
@@ -38,6 +42,12 @@ public class Key : MonoBehaviour
         OutKeyboard = false;
         InKeyboard = true;
         InPad = false;
+        moveTo(positionInKeyboard);
+    }
+
+    public void moveTo(Transform position)
+    {
+        transform.Translate(positionInKeyboard.transform.position);
     }
 
     public void outOfGame()
@@ -45,10 +55,5 @@ public class Key : MonoBehaviour
         OutKeyboard = false;
         InKeyboard = false;
         InPad = false;
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 }
