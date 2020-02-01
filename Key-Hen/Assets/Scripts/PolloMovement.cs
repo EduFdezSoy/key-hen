@@ -24,10 +24,10 @@ public class PolloMovement : MonoBehaviour
     {
         // select target from key array
         Vector3[] destinos = {
-            new Vector3(-10f, 0f, 10f),
-            new Vector3(10f, 0f, -10f),
-            new Vector3(-10f, 0f, -10f),
-            new Vector3(10f, 0f, 10f)
+            new Vector3(-10f, 1f, 10f),
+            new Vector3(10f, 1f, -10f),
+            new Vector3(-10f, 1f, -10f),
+            new Vector3(10f, 1f, 10f)
         };
 
         // send the destiny to the berd to start moving it
