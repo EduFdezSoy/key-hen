@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     //Singleton
     public static GameManager instance;
-       //Panel of paused states and states boolens
+    //Panel of paused states and states boolens
     public GameObject _pausePanel;
     public GameObject _deathPanel;
     private bool _paused = false;
@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour
     {
         imageHealth.fillAmount = Health / 3;
         Debug.Log(Health/3f);
-        //TODO: Actualizar teclas tambien aqui y reutilizamos codigo
         _txtTiempo.text = gameTime.ToString() + " s";
         _txtPoints.text = Points + " pts";
     }
