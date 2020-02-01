@@ -7,36 +7,36 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    //Singleton
     public static GameManager instance;
-
+       //Panel of paused states and states boolens
     public GameObject _pausePanel;
     public GameObject _deathPanel;
     private bool _paused = false;
     private bool _gameOver = false;
-
+    //Counter of key in pad and out of it
     private int _keyInPad = 0;
     private int _maxKeyInPad = 8;
     private int _keysOut = 0;
     private int _maxKeysOut = 12;
-    
+    //Game Health
     private float _health = 3f;
-
-    private float _time = 0f;
-
+    //Current time of sesion
+    private int gameTime;
+    //MusicManager
     public AudioSource _musicManager;
-
+    //Listado de teclas en juego
     private List<GameObject> _listadoTeclas;
-
+    //Time to wait before start
     public float _startWait;
-
+    //UI elements
     public Image imageHealth;
     public TextMeshProUGUI _txtTiempo;
     public TextMeshProUGUI _txtPoints;
-
-    private int gameTime;
-
+    //Points of sesion
     private float _points;
 
+    //Getters and setters
     public int KeyInPad { get => _keyInPad; set => _keyInPad = value; }
     public int MaxKeyInPad { get => _maxKeyInPad; set => _maxKeyInPad = value; }
     public int KeysOut { get => _keysOut; set => _keysOut = value; }
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public float Health { get => _health; set => _health = value; }
     public float Points { get => _points; set => _points = value; }
 
+    //First method to be called
     void Awake()
     {
         if (instance == null)
@@ -60,33 +61,38 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
+    //Ask if Pad is full
     public bool isPadFull()
     {
         return KeyInPad >= MaxKeyInPad;
     }
 
+    //Ask if Out Area is full
     public bool isOutFull()
     {
         return KeysOut >= MaxKeysOut;
     }
 
+    //Add to the counters pad and eliminate in out area
     public void addKeytoPad()
     {
         KeyInPad++;
         KeysOut--;
     }
 
+
+    //Add key out counter
     public void addKeyOut()
     {
         KeysOut++;
     }
-
+    //Add points
     public void addPoints()
     {
         Points++;
         updateUI();
     }
-
+    //Minus -1 health when called
     public void takeDamage()
     {
         Debug.Log(Health);
@@ -95,6 +101,9 @@ public class GameManager : MonoBehaviour
         updateUI();
     }
 
+    /*
+     * Update the info in the UI
+     */
     private void updateUI()
     {
         imageHealth.fillAmount = Health / 3;
@@ -103,7 +112,7 @@ public class GameManager : MonoBehaviour
         _txtTiempo.text = gameTime.ToString() + " s";
         _txtPoints.text = Points + " pts";
     }
-
+    //This corustine called when game is gonna start
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(_startWait);
@@ -111,13 +120,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         StartContador();
     }
-
+    //Starts the counter
     private void StartContador()
     {
         gameTime = 0;
         StartCoroutine(TimeCounter());
     }
-
+    //Adds +1 to the counter every seconds except 
     IEnumerator TimeCounter()
     {
         if (Time.timeScale == 0)
@@ -131,13 +140,13 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(TimeCounter());
     }
-
+    //Updates, you know. That one
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             SetPauseGame(!_paused);
     }
-
+    //Sets the game to game over, pausing time 
     public void SetGameOver(bool gameOver)
     {
         _gameOver = gameOver;
@@ -145,6 +154,7 @@ public class GameManager : MonoBehaviour
         _deathPanel.SetActive(gameOver);
         GetComponent<AudioSource>().Stop();
     }
+    //Pauses game
     public void SetPauseGame(bool pause)
     {
         if (!_deathPanel.activeSelf)
@@ -154,12 +164,12 @@ public class GameManager : MonoBehaviour
             _pausePanel.SetActive(pause);
         }
     }
-
+    //Ask if game is paused
     public bool IsGamePaused()
     {
         return _paused;
     }
-
+    //Return the time to 1
     private void OnDestroy()
     {
         Time.timeScale = 1;
