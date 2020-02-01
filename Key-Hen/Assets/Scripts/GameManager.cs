@@ -21,21 +21,28 @@ public class GameManager : MonoBehaviour
     
     private float _health = 3f;
 
-    public AudioSource _musicManager;
+    private float _time = 0f;
 
-    public TextMeshProUGUI _txtTiempo;
+    public AudioSource _musicManager;
 
     private List<GameObject> _listadoTeclas;
 
     public float _startWait;
+
     public Image imageHealth;
+    public TextMeshProUGUI _txtTiempo;
+    public TextMeshProUGUI _txtPoints;
+
+    private int gameTime;
+
+    private float _points;
 
     public int KeyInPad { get => _keyInPad; set => _keyInPad = value; }
     public int MaxKeyInPad { get => _maxKeyInPad; set => _maxKeyInPad = value; }
     public int KeysOut { get => _keysOut; set => _keysOut = value; }
     public int MaxKeysOut { get => _maxKeysOut; set => _maxKeysOut = value; }
-    
     public float Health { get => _health; set => _health = value; }
+    public float Points { get => _points; set => _points = value; }
 
     void Awake()
     {
@@ -74,6 +81,12 @@ public class GameManager : MonoBehaviour
         KeysOut++;
     }
 
+    public void addPoints()
+    {
+        Points++;
+        updateUI();
+    }
+
     public void takeDamage()
     {
         Debug.Log(Health);
@@ -85,10 +98,10 @@ public class GameManager : MonoBehaviour
     private void updateUI()
     {
         imageHealth.fillAmount = Health / 3;
-
         Debug.Log(Health/3f);
-
         //TODO: Actualizar teclas tambien aqui y reutilizamos codigo
+        _txtTiempo.text = gameTime.ToString() + " s";
+        _txtPoints.text = Points + " pts";
     }
 
     IEnumerator StartGame()
@@ -96,6 +109,27 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(_startWait);
         //TODO: Logica de juego, referencia a Pajaro para iniciar su movimiento y el del juegador
         Time.timeScale = 1;
+        StartContador();
+    }
+
+    private void StartContador()
+    {
+        gameTime = 0;
+        StartCoroutine(TimeCounter());
+    }
+
+    IEnumerator TimeCounter()
+    {
+        if (Time.timeScale == 0)
+        {
+            yield return new WaitForSecondsRealtime(0f);
+        }
+        else {
+            updateUI();
+            yield return new WaitForSecondsRealtime(1f);
+            gameTime++;
+        }
+        StartCoroutine(TimeCounter());
     }
 
     void Update()
@@ -124,7 +158,7 @@ public class GameManager : MonoBehaviour
     public bool IsGamePaused()
     {
         return _paused;
-            }
+    }
 
     private void OnDestroy()
     {
