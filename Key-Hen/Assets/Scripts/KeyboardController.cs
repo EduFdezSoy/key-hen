@@ -6,25 +6,26 @@ public class KeyboardController : MonoBehaviour
 {
     public GameObject[] keysOnKeyboardInit;
     public GameObject[] keysOnKeyboardCurrent;
-    private bool arrayReady;
+    private bool arrayReady =false;
     public PositionControler positionControler;
 
     void Start()
     {
         WithForLoop();
     }
-
+  
     void WithForLoop()
     {
         int children = transform.childCount;
         keysOnKeyboardInit = new GameObject[children];
+        keysOnKeyboardCurrent = new GameObject[children];
         for (int i = 0; i < children; ++i)
         {
             if(transform.GetChild(i).gameObject.tag.Equals("Key"))
             keysOnKeyboardInit[i] = transform.GetChild(i).gameObject;
         }
         arrayReady = true;
-        keysOnKeyboardCurrent = keysOnKeyboardInit;
+        keysOnKeyboardInit.CopyTo(keysOnKeyboardCurrent,0);
     }
     public bool hasArrayReady()
     {

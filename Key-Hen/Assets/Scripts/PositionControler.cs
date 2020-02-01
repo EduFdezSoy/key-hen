@@ -6,7 +6,7 @@ using UnityEngine;
 public class PositionControler : MonoBehaviour
 {
     GameObject _fatherPositions;
-    public Transform[] _positions;
+    public Transform[] positions;
     protected bool[] filledPositions = new bool[10];
     protected string[] filledKeycode = new string[10];
     public KeyboardController keyboardController;
@@ -30,7 +30,7 @@ public class PositionControler : MonoBehaviour
             {
                 fillSpace(i);
                 fillKeyCode(i, keycode._name);
-                keycode.moveTo(_positions[i]);
+                keycode.moveTo(positions[i]);
                 return i;
             }
         }
@@ -52,12 +52,15 @@ public class PositionControler : MonoBehaviour
         keycode.moveToPad();
         for (int i = 0; i < filledKeycode.Length; i++)
         {
-            if (filledKeycode[i].Equals(keycode._name))
+            Debug.Log(i);
+
+            if (filledKeycode[i] != null && filledKeycode[i].Equals(keycode._name))
             {
                 filledPositions[i] = false;
                 // if -1 mata la pieza
                 keycode.moveToPad();
                 padManager.isFilledOut(keycode);
+                return;
             }
         }
     }
