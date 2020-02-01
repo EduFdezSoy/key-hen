@@ -14,11 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject _deathPanel;
     private bool _paused = false;
     private bool _gameOver = false;
-    //Counter of key in pad and out of it
-    private int _keyInPad = 0;
-    private int _maxKeyInPad = 8;
-    private int _keysOut = 0;
-    private int _maxKeysOut = 12;
     //Game Health
     private float _health = 3f;
     //Current time of sesion
@@ -36,11 +31,6 @@ public class GameManager : MonoBehaviour
     //Points of sesion
     private float _points;
 
-    //Getters and setters
-    public int KeyInPad { get => _keyInPad; set => _keyInPad = value; }
-    public int MaxKeyInPad { get => _maxKeyInPad; set => _maxKeyInPad = value; }
-    public int KeysOut { get => _keysOut; set => _keysOut = value; }
-    public int MaxKeysOut { get => _maxKeysOut; set => _maxKeysOut = value; }
     public float Health { get => _health; set => _health = value; }
     public float Points { get => _points; set => _points = value; }
 
@@ -60,32 +50,7 @@ public class GameManager : MonoBehaviour
         SetPauseGame(false);
         StartCoroutine(StartGame());
     }
-
-    //Ask if Pad is full
-    public bool isPadFull()
-    {
-        return KeyInPad >= MaxKeyInPad;
-    }
-
-    //Ask if Out Area is full
-    public bool isOutFull()
-    {
-        return KeysOut >= MaxKeysOut;
-    }
-
-    //Add to the counters pad and eliminate in out area
-    public void addKeytoPad()
-    {
-        KeyInPad++;
-        KeysOut--;
-    }
-
-
-    //Add key out counter
-    public void addKeyOut()
-    {
-        KeysOut++;
-    }
+ 
     //Add points
     public void addPoints()
     {

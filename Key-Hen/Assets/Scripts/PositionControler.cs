@@ -7,8 +7,8 @@ public class PositionControler : MonoBehaviour
 {
     GameObject _fatherPositions;
     public Transform[] _positions;
-    private bool[] filledPositions;
-    private string[] filledKeycode;
+    protected bool[] filledPositions;
+    protected string[] filledKeycode;
 
     private void Start()
     {
