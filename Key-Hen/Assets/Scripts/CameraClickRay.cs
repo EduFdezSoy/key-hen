@@ -11,10 +11,15 @@ public class CameraClickRay : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
-            { 
-                //TODO: Le dice a la ficha o pajaro que se mueva
+            {
+                if (hit.collider.gameObject.tag.Equals("Key"))
+                {
+                    if (hit.collider.gameObject.GetComponent<Key>().OutKeyboard)
+                    {
+                        hit.collider.gameObject.GetComponent<Key>().moveToPad();
+                    }
+                }
             }
-            Debug.Log("You selected the " + hit.transform.name);
         }
 
     }

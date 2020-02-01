@@ -10,6 +10,10 @@ public class Key : MonoBehaviour
     private bool _inPad = false;
     private bool _outKeyboard = false;
 
+    public bool OutKeyboard { get => _outKeyboard; set => _outKeyboard = value; }
+    public bool InPad { get => _inPad; set => _inPad = value; }
+    public bool InKeyboard { get => _inKeyboard; set => _inKeyboard = value; }
+
     private void Start()
     {
         positionInKeyboard = gameObject.transform;
@@ -17,29 +21,34 @@ public class Key : MonoBehaviour
 
     public void moveOut()
     {
-        _outKeyboard = true;
-        _inKeyboard = false;
-        _inPad = false;
+        OutKeyboard = true;
+        InKeyboard = false;
+        InPad = false;
     }
 
     public void moveToPad()
     {
-        _outKeyboard = false;
-        _inKeyboard = false;
-        _inPad = true;
+        OutKeyboard = false;
+        InKeyboard = false;
+        InPad = true;
     }
 
     public void moveBack()
     {
-        _outKeyboard = false;
-        _inKeyboard = true;
-        _inPad = false;
+        OutKeyboard = false;
+        InKeyboard = true;
+        InPad = false;
     }
 
     public void outOfGame()
     {
-        _outKeyboard = false;
-        _inKeyboard = false;
-        _inPad = false;
+        OutKeyboard = false;
+        InKeyboard = false;
+        InPad = false;
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 }
