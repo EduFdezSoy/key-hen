@@ -5,9 +5,7 @@ using UnityEngine;
 /// Link this to something
 public class PolloMovement : MonoBehaviour
 {
-
     public GameObject pollo;
-
     public KeyboardController keyboardController;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +30,13 @@ public class PolloMovement : MonoBehaviour
         }
 
         // send the destiny to the berd to start moving it
-        pollo.GetComponent<PolloBehaviour>().Destino = destinos[Random.Range(0, destinos.Length)];
+        int random = Random.Range(0, destinos.Length);
+        if (destinosGO[random] != null)
+        {
+            pollo.GetComponent<PolloBehaviour>().Destino = destinos[random];
+            pollo.GetComponent<PolloBehaviour>().keycode = destinosGO[random].GetComponent<Key>();
+            pollo.GetComponent<PolloBehaviour>().position = random;
+        }
         
         StartCoroutine(ThinkMovement());
     }

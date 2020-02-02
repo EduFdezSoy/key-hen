@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private Vector3 positionInKeyboard;
+    public Vector3 positionInKeyboard;
     public string _name = "";
     private bool _inKeyboard =true;
     private bool _inPad = false;
@@ -54,6 +54,6 @@ public class Key : MonoBehaviour
         OutKeyboard = false;
         InKeyboard = false;
         InPad = false;
-        Destroy(this);
+        Destroy(transform.gameObject);
     }
 }

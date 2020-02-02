@@ -16,11 +16,11 @@ public class PadManager : PositionControler
     {
         for (int i = 0; filledKeycode.Length > i; i++)
         {
-            if (filledKeycode[i] != null&& filledKeycode[i] != "" && Input.GetKeyDown(filledKeycode[i]))
+            if (filledKeycode[i] != null&& filledKeycode[i] != "" && Input.GetKeyDown(filledKeycode[i].ToLower()))
             {
                 for (int j = 0; j < listado.Length; j++)
                 {
-                    if (listado[j].GetComponent<Key>() != null && listado[j].GetComponent<Key>()._name != null && listado[j].GetComponent<Key>()._name != "" && listado[j].GetComponent<Key>()._name.Equals(filledKeycode[i]))
+                    if (listado[j] != null && listado[j].GetComponent<Key>() != null && listado[j].GetComponent<Key>()._name != null && listado[j].GetComponent<Key>()._name != "" && listado[j].GetComponent<Key>()._name.Equals(filledKeycode[i]))
                     {
                         listado[j].GetComponent<Key>().moveBack();
                         keyboardController.getBackElement(listado[j].GetComponent<Key>());
