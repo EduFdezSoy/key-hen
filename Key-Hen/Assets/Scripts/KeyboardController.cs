@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +28,18 @@ public class KeyboardController : MonoBehaviour
         arrayReady = true;
         keysOnKeyboardInit.CopyTo(keysOnKeyboardCurrent,0);
     }
+
+    public void getBackElement(Key key)
+    {
+        for (int i = 0; i < keysOnKeyboardInit.Length; i++)
+        {
+            if (keysOnKeyboardInit[i].GetComponent<Key>()._name.Equals(key._name))
+            {
+                keysOnKeyboardCurrent[i] = keysOnKeyboardInit[i];
+            }
+        }
+    }
+
     public bool hasArrayReady()
     {
         return arrayReady;

@@ -33,17 +33,9 @@ public class PolloBehaviour : MonoBehaviour
         StartCoroutine(MoveDuck());
 
         keyboardController.dropOutKey(1);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
-    {
-
+        keyboardController.dropOutKey(2);
+        keyboardController.dropOutKey(3);
+        keyboardController.dropOutKey(4);
     }
 
     private IEnumerator MoveDuck()
@@ -61,6 +53,15 @@ public class PolloBehaviour : MonoBehaviour
     
         yield return new WaitForSeconds(timeToMove);
         StartCoroutine(MoveDuck());
+        StartCoroutine(TakeKey());
+    }
+    private IEnumerator TakeKey()
+    {
+        yield return new WaitForSeconds(0.1f);
+        keyboardController.dropOutKey(1);
+        keyboardController.dropOutKey(2);
+        keyboardController.dropOutKey(3);
+        keyboardController.dropOutKey(4);
     }
 
     /// Bigger the time, more probabilities to change the bird mind

@@ -8,9 +8,14 @@ public class PolloMovement : MonoBehaviour
 
     public GameObject pollo;
 
+    public KeyboardController keyboardController;
     // Start is called before the first frame update
     void Start()
     {
+        while (!keyboardController.hasArrayReady())
+        {
+
+        }
         setDestiny();
     }
 
@@ -22,13 +27,14 @@ public class PolloMovement : MonoBehaviour
 
     private void setDestiny()
     {
-        // select target from key array
-        Vector3[] destinos = {
-            new Vector3(-10f, 1f, 10f),
-            new Vector3(10f, 1f, -10f),
-            new Vector3(-10f, 1f, -10f),
-            new Vector3(10f, 1f, 10f)
-        };
+        GameObject[] destinosGO = keyboardController.getArray();
+
+        Vector3[] destinos = new Vector3[destinosGO.Length];
+
+        for (int i = 0; i < destinosGO.Length; i++)
+        {
+            destinos[i] = destinosGO[i].transform.position + new Vector3(0,1,0);
+        }
 
         // send the destiny to the berd to start moving it
         pollo.GetComponent<PolloBehaviour>().Destino = destinos[Random.Range(0, destinos.Length)];

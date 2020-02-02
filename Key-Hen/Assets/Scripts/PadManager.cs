@@ -23,7 +23,8 @@ public class PadManager : PositionControler
                     if (listado[j].GetComponent<Key>()._name.Equals(filledKeycode[i]))
                    {
                         listado[j].GetComponent<Key>().moveBack();
-                        //Todo: Avisar al key manager
+                        keyboardController.getBackElement(listado[j].GetComponent<Key>());
+                        GameManager.instance.addPoints();
                    }
                 }
             }
