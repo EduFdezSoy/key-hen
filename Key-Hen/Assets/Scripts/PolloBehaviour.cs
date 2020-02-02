@@ -10,8 +10,8 @@ public class PolloBehaviour : MonoBehaviour
     float timeToMove = 0.001f;
 
     // private fields
-    private Vector3 destino = new Vector3(10f, 0f, -10f);
-    private Vector3 newVector = new Vector3();
+    private Vector3 destino = new Vector3(10f, 2f, -10f);
+    private Vector3 newVector = new Vector3(0f, 2f, 0f);
     private float lastChangeTime = 0f;
 
     // getters and setters
@@ -32,10 +32,6 @@ public class PolloBehaviour : MonoBehaviour
 
         StartCoroutine(MoveDuck());
 
-        keyboardController.dropOutKey(1);
-        keyboardController.dropOutKey(2);
-        keyboardController.dropOutKey(3);
-        keyboardController.dropOutKey(4);
     }
 
     private IEnumerator MoveDuck()
@@ -50,10 +46,8 @@ public class PolloBehaviour : MonoBehaviour
         Vector3 desp = Vector3.MoveTowards(transform.position, Destino, Time.deltaTime * movement) - transform.position;
         transform.position += desp;
 
-    
         yield return new WaitForSeconds(timeToMove);
         StartCoroutine(MoveDuck());
-        StartCoroutine(TakeKey());
     }
     private IEnumerator TakeKey()
     {

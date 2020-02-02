@@ -19,21 +19,16 @@ public class PolloMovement : MonoBehaviour
         setDestiny();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void setDestiny()
     {
-        GameObject[] destinosGO = keyboardController.getArray();
+        GameObject[] destinosGO = keyboardController.getArrayNotTakens();
 
         Vector3[] destinos = new Vector3[destinosGO.Length];
 
         for (int i = 0; i < destinosGO.Length; i++)
         {
-            destinos[i] = destinosGO[i].transform.position + new Vector3(0,1,0);
+            if(destinosGO[i] != null)
+            destinos[i] = destinosGO[i].transform.position + new Vector3(0,2,0);
         }
 
         // send the destiny to the berd to start moving it

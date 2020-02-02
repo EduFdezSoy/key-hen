@@ -43,12 +43,9 @@ public class Key : MonoBehaviour
         moveTo(positionInKeyboard);
     }
 
-    public void moveTo(Transform position)
-    {
-        transform.position = position.position;
-    }
     public void moveTo(Vector3 position)
     {
+        position.y = 0;
         transform.position = position;
     }
 
@@ -57,5 +54,6 @@ public class Key : MonoBehaviour
         OutKeyboard = false;
         InKeyboard = false;
         InPad = false;
+        Destroy(this);
     }
 }

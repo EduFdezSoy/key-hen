@@ -15,7 +15,7 @@ public class CameraClickRay : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag.Equals("Key"))
                 {
-                    if (hit.collider.gameObject.GetComponent<Key>().OutKeyboard)
+                    if (hit.collider.gameObject.GetComponent<Key>() != null && hit.collider.gameObject.GetComponent<Key>().OutKeyboard)
                     {
                         positionControler.takeLetter( hit.collider.gameObject.GetComponent<Key>());
                     }

@@ -30,7 +30,7 @@ public class PositionControler : MonoBehaviour
             {
                 fillSpace(i);
                 fillKeyCode(i, keycode._name);
-                keycode.moveTo(positions[i]);
+                keycode.moveTo(positions[i].position);
                 return i;
             }
         }
@@ -58,8 +58,16 @@ public class PositionControler : MonoBehaviour
             {
                 filledPositions[i] = false;
                 // if -1 mata la pieza
-                keycode.moveToPad();
-                padManager.isFilledOut(keycode);
+                int valor = padManager.isFilledOut(keycode);
+                if (valor == -1)
+                {
+                    GameManager.instance.takeDamage();
+                    keycode.outOfGame();
+                }
+                else {
+
+                    keycode.moveToPad();
+                }
                 return;
             }
         }

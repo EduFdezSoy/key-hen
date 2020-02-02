@@ -22,18 +22,24 @@ public class KeyboardController : MonoBehaviour
         keysOnKeyboardCurrent = new GameObject[children];
         for (int i = 0; i < children; ++i)
         {
-            if(transform.GetChild(i).gameObject.tag.Equals("Key"))
-            keysOnKeyboardInit[i] = transform.GetChild(i).gameObject;
+            if (transform.GetChild(i).gameObject.tag.Equals("Key"))
+            {
+                if (transform.GetChild(i).gameObject.GetComponent<Key>() != null && transform.GetChild(i).gameObject.GetComponent<Key>()._name != "")
+                {
+                    Debug.Log("Soy la key: " + transform.GetChild(i).gameObject.GetComponent<Key>()._name);
+                    keysOnKeyboardInit[i] = transform.GetChild(i).gameObject;
+                    keysOnKeyboardCurrent[i] = transform.GetChild(i).gameObject;
+                }
+            }
         }
         arrayReady = true;
-        keysOnKeyboardInit.CopyTo(keysOnKeyboardCurrent,0);
     }
 
     public void getBackElement(Key key)
     {
         for (int i = 0; i < keysOnKeyboardInit.Length; i++)
         {
-            if (keysOnKeyboardInit[i].GetComponent<Key>()._name.Equals(key._name))
+            if (keysOnKeyboardInit[i].GetComponent<Key>()!= null && keysOnKeyboardInit[i].GetComponent<Key>()._name.Equals(key._name))
             {
                 keysOnKeyboardCurrent[i] = keysOnKeyboardInit[i];
             }
@@ -49,12 +55,26 @@ public class KeyboardController : MonoBehaviour
         return keysOnKeyboardInit;
     }
 
+    public GameObject[] getArrayNotTakens()
+    {
+        return keysOnKeyboardCurrent;
+    }
+
     public void dropOutKey(int pos)
     {
-        keysOnKeyboardCurrent[pos] = null;
-        keysOnKeyboardInit[pos].GetComponent<Key>().moveOut();
+        if (keysOnKeyboardCurrent[pos] != null)
+        {
+            keysOnKeyboardCurrent[pos] = null;
 
-        // if -1 mata la pieza
-        positionControler.isFilledOut(keysOnKeyboardInit[pos].GetComponent<Key>());
+            int valor = positionControler.isFilledOut(keysOnKeyboardInit[pos].GetComponent<Key>());
+            if (valor == -1)
+            {
+                GameManager.instance.takeDamage();
+                keysOnKeyboardInit[pos].GetComponent<Key>().outOfGame();
+            }
+            else
+            { keysOnKeyboardInit[pos].GetComponent<Key>().moveOut();
+            }
+        }
     }
 }
