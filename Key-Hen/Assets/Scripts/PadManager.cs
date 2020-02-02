@@ -34,8 +34,6 @@ public class PadManager : PositionControler
 
     private void resetPosition(int i)
     {
-        Debug.Log(i);
-        Debug.Log("Keycode: " + filledKeycode[i]);
         filledKeycode[i] = "";
         filledPositions[i] = false;
          
