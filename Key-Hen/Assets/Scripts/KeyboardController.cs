@@ -17,30 +17,6 @@ public class KeyboardController : MonoBehaviour
         WithForLoop();
 
     }
-    IEnumerator Ordena()
-    {
-     
-        if (arrayReady)
-        {
-
-            Vector3 original;
-            Vector3 actual;
-            for (int i = 0; i < keysOnKeyboardCurrent.Length; i++)
-            {
-                if (keysOnKeyboardCurrent[i]!= null) {
-                    actual = keysOnKeyboardCurrent[i].transform.position;
-                    original = keysOnKeyboardCurrent[i].GetComponent<Key>().positionInKeyboard;
-                    Debug.Log(Vector3.Distance(original, actual));
-                    if (Vector3.Distance(original, actual) < 0.01)
-                    {
-                        keysOnKeyboardCurrent[i].GetComponent<Key>().moveTo(keysOnKeyboardCurrent[i].GetComponent<Key>().positionInKeyboard);
-                    }
-                }
-            }
-        }
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(Ordena());
-    }
   
     void WithForLoop()
     {
@@ -67,8 +43,6 @@ public class KeyboardController : MonoBehaviour
             }
         }
         arrayReady = true;
-
-        StartCoroutine(Ordena());
     }
 
     public void getBackElement(Key key)
