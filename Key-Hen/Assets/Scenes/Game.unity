@@ -422,7 +422,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 20735339}
   m_TextComponent: {fileID: 256985155}
   m_materialReferenceIndex: 1
@@ -546,7 +546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -56}
+  m_AnchoredPosition: {x: -196, y: -154}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53365813
@@ -569,8 +569,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0 pts
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2498452d0118de04fb0c84a504cf5d67, type: 2}
-  m_sharedMaterial: {fileID: -7089944878442376571, guid: 2498452d0118de04fb0c84a504cf5d67,
+  m_fontAsset: {fileID: 11400000, guid: b9df7f6bf06af9e49983454eba9841bf, type: 2}
+  m_sharedMaterial: {fileID: -7089944878442376571, guid: b9df7f6bf06af9e49983454eba9841bf,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -596,8 +596,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -610,10 +610,10 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1762,8 +1762,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -40}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 196, y: -100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191219931
 MonoBehaviour:
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 220139061}
   m_TextComponent: {fileID: 875881628}
   m_materialReferenceIndex: 1
@@ -3096,7 +3096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -29}
+  m_AnchoredPosition: {x: -196, y: -100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415573989
@@ -3119,8 +3119,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10000000 s
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2498452d0118de04fb0c84a504cf5d67, type: 2}
-  m_sharedMaterial: {fileID: -7089944878442376571, guid: 2498452d0118de04fb0c84a504cf5d67,
+  m_fontAsset: {fileID: 11400000, guid: 148c014269fd6cf4384b275a4737e53e, type: 2}
+  m_sharedMaterial: {fileID: -7089944878442376571, guid: 148c014269fd6cf4384b275a4737e53e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3146,8 +3146,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3160,10 +3160,10 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 536621654}
   m_TextComponent: {fileID: 4150296}
   m_materialReferenceIndex: 1
@@ -4005,7 +4005,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 543417310}
   m_TextComponent: {fileID: 1116301147}
   m_materialReferenceIndex: 1
@@ -4440,7 +4440,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 681186074}
   m_TextComponent: {fileID: 256985155}
   m_materialReferenceIndex: 1
@@ -5212,7 +5212,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 768995099}
   m_TextComponent: {fileID: 932691773}
   m_materialReferenceIndex: 1
@@ -5411,7 +5411,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 790755847}
   m_TextComponent: {fileID: 1116301147}
   m_materialReferenceIndex: 1
@@ -5928,7 +5928,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 845630097}
   m_TextComponent: {fileID: 4150296}
   m_materialReferenceIndex: 1
@@ -6652,7 +6652,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 909424718}
   m_TextComponent: {fileID: 932691773}
   m_materialReferenceIndex: 1
@@ -7157,7 +7157,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 967478447}
   m_TextComponent: {fileID: 1116301147}
   m_materialReferenceIndex: 1
@@ -8460,7 +8460,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1226424742}
   m_TextComponent: {fileID: 789217374}
   m_materialReferenceIndex: 1
@@ -9117,7 +9117,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1361712120}
   m_TextComponent: {fileID: 789217374}
   m_materialReferenceIndex: 1
@@ -9231,7 +9231,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1397952075}
   m_TextComponent: {fileID: 932691773}
   m_materialReferenceIndex: 1
@@ -9413,7 +9413,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1412588220}
   m_TextComponent: {fileID: 256985155}
   m_materialReferenceIndex: 1
@@ -10212,7 +10212,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1556241822}
   m_TextComponent: {fileID: 875881628}
   m_materialReferenceIndex: 1
@@ -10296,7 +10296,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1567483011}
   m_TextComponent: {fileID: 875881628}
   m_materialReferenceIndex: 1
@@ -11837,7 +11837,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1925988747}
   m_TextComponent: {fileID: 789217374}
   m_materialReferenceIndex: 1
@@ -12592,7 +12592,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 2038269451}
   m_TextComponent: {fileID: 4150296}
   m_materialReferenceIndex: 1
