@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
         Health--;
         //Debug.Log(Health);
         updateUI();
+        if (Health == 0)
+        {
+            SetGameOver(true);
+        }
     }
 
     /*
