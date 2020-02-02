@@ -58,10 +58,6 @@ public class PolloBehaviour : MonoBehaviour
     private IEnumerator TakeKey()
     {
         yield return new WaitForSeconds(0.1f);
-        keyboardController.dropOutKey(1);
-        keyboardController.dropOutKey(2);
-        keyboardController.dropOutKey(3);
-        keyboardController.dropOutKey(4);
     }
 
     /// Bigger the time, more probabilities to change the bird mind
