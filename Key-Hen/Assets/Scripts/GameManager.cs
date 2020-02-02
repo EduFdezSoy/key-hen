@@ -7,6 +7,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public const int KEYBOARDCONTROLLER = 1;
+    public const int POSITIONCONTROLLER = 2;
+
     //Singleton
     public static GameManager instance;
     //Panel of paused states and states boolens
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
         SetPauseGame(false);
         StartCoroutine(StartGame());
     }
- 
+
     //Add points
     public void addPoints()
     {
@@ -59,11 +62,30 @@ public class GameManager : MonoBehaviour
         updateUI();
     }
     //Minus -1 health when called
-    public void takeDamage()
+    public void takeDamage(int OYENINODEQUIENERE)
     {
-        //Debug.Log(Health);
+
+        if (OYENINODEQUIENERE == POSITIONCONTROLLER)
+        {
+            PositionControler pc = GameObject.Find("fatherPositions").GetComponent<PositionControler>();
+            if (!pc.hasSpace())
+            {
+                damaged();
+            }
+        }
+        else if (OYENINODEQUIENERE == KEYBOARDCONTROLLER)
+        {
+            KeyboardController kc = GameObject.Find("keyboardPositions").GetComponent<KeyboardController>();
+            if (!kc.hasSpace())
+            {
+                damaged();
+            }
+        }
+    }
+
+    private void damaged()
+    {
         Health--;
-        //Debug.Log(Health);
         updateUI();
         if (Health == 0)
         {
@@ -77,7 +99,7 @@ public class GameManager : MonoBehaviour
     private void updateUI()
     {
         imageHealth.fillAmount = Health / 3;
-       // Debug.Log(Health/3f);
+        // Debug.Log(Health/3f);
         _txtTiempo.text = gameTime.ToString() + " s";
         _txtPoints.text = Points + " pts";
     }
@@ -102,7 +124,8 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0f);
         }
-        else {
+        else
+        {
             updateUI();
             yield return new WaitForSecondsRealtime(1f);
             gameTime++;

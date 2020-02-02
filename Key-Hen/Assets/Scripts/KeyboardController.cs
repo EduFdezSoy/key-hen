@@ -88,7 +88,7 @@ public class KeyboardController : MonoBehaviour
             int valor = positionControler.isFilledOut(keysOnKeyboardInit[pos].GetComponent<Key>());
             if (valor == -1)
             {
-                GameManager.instance.takeDamage();
+                GameManager.instance.takeDamage(GameManager.KEYBOARDCONTROLLER);
                 keysOnKeyboardInit[pos].GetComponent<Key>().outOfGame();
             }
             else
@@ -96,5 +96,17 @@ public class KeyboardController : MonoBehaviour
                 keysOnKeyboardInit[pos].GetComponent<Key>().moveOut();
             }
         }
+    }
+
+    public bool hasSpace() {
+        for (int i = 0; i < keysOnKeyboardCurrent.Length; i++)
+        {
+            if (keysOnKeyboardCurrent[i] == null)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

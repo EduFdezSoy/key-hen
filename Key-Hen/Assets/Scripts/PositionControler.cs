@@ -35,14 +35,15 @@ public class PositionControler : MonoBehaviour
 
                     return r;
                 }
-            } else
+            } 
+            else
             {
                 return -1;
             }
         }
     }
 
-    private bool hasSpace()
+    public bool hasSpace()
     {
         for (int i = 0; i < filledPositions.Length; i++)
         {
@@ -66,7 +67,6 @@ public class PositionControler : MonoBehaviour
 
     public void takeLetter(Key keycode)
     {
-        keycode.moveToPad();
         for (int i = 0; i < filledKeycode.Length; i++)
         {
 
@@ -77,15 +77,14 @@ public class PositionControler : MonoBehaviour
                 int valor = padManager.isFilledOut(keycode);
                 if (valor == -1)
                 {
-                    GameManager.instance.takeDamage();
+                    GameManager.instance.takeDamage(GameManager.POSITIONCONTROLLER);
                     keycode.outOfGame();
                 }
                 else
                 {
-
                     keycode.moveToPad();
                 }
-                return;
+                break;
             }
         }
     }
