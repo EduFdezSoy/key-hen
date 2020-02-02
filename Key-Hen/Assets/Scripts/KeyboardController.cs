@@ -88,8 +88,7 @@ public class KeyboardController : MonoBehaviour
             int valor = positionControler.isFilledOut(keysOnKeyboardInit[pos].GetComponent<Key>());
             if (valor == -1)
             {
-                GameManager.instance.takeDamage(GameManager.KEYBOARDCONTROLLER);
-                keysOnKeyboardInit[pos].GetComponent<Key>().outOfGame();
+                GameManager.instance.takeDamage(GameManager.KEYBOARDCONTROLLER, keysOnKeyboardInit[pos].GetComponent<Key>());
             }
             else
             {

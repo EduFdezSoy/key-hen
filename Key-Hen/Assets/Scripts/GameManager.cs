@@ -62,23 +62,25 @@ public class GameManager : MonoBehaviour
         updateUI();
     }
     //Minus -1 health when called
-    public void takeDamage(int OYENINODEQUIENERE)
+    public void takeDamage(int OYENINODEQUIENERE, Key key)
     {
-
-        if (OYENINODEQUIENERE == POSITIONCONTROLLER)
+        if (OYENINODEQUIENERE == KEYBOARDCONTROLLER)
         {
             PositionControler pc = GameObject.Find("fatherPositions").GetComponent<PositionControler>();
+            Debug.Log(pc.hasSpace());
             if (!pc.hasSpace())
             {
                 damaged();
+                key.outOfGame();
             }
         }
-        else if (OYENINODEQUIENERE == KEYBOARDCONTROLLER)
+        else if (OYENINODEQUIENERE == POSITIONCONTROLLER)
         {
-            KeyboardController kc = GameObject.Find("keyboardPositions").GetComponent<KeyboardController>();
-            if (!kc.hasSpace())
+            PadManager pm = GameObject.Find("Teclado").GetComponent<PadManager>();
+            if (!pm.hasSpace())
             {
                 damaged();
+                key.outOfGame();
             }
         }
     }

@@ -77,8 +77,7 @@ public class PositionControler : MonoBehaviour
                 int valor = padManager.isFilledOut(keycode);
                 if (valor == -1)
                 {
-                    GameManager.instance.takeDamage(GameManager.POSITIONCONTROLLER);
-                    keycode.outOfGame();
+                    GameManager.instance.takeDamage(GameManager.POSITIONCONTROLLER, keycode);
                 }
                 else
                 {
