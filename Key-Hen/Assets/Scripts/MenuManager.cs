@@ -15,11 +15,6 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void GotoSettings()
-    {
-        SceneManager.LoadScene("Opciones");
-    }
-
     public void GotoAbout()
     {
         SceneManager.LoadScene("About");

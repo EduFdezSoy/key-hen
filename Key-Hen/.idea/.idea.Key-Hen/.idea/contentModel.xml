@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="CameraClickRay.cs" t="Include" />
+          <e p="ExitAbout.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Key.cs" t="Include" />
           <e p="KeyboardController.cs" t="Include" />
