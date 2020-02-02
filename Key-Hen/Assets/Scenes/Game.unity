@@ -8520,7 +8520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1459478802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10284,6 +10284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eab64ee08d24064faaed3fd17bd8146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keycode: {fileID: 0}
+  position: 0
   keyboardController: {fileID: 1018943173}
 --- !u!1 &1782504452
 GameObject:
@@ -11427,7 +11429,7 @@ PrefabInstance:
     - target: {fileID: 5646831410652037634, guid: 525f186c6c471684dbb8235572bb9271,
         type: 3}
       propertyPath: _name
-      value: F
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525f186c6c471684dbb8235572bb9271, type: 3}
@@ -12309,7 +12311,7 @@ PrefabInstance:
     - target: {fileID: 5646831410652037634, guid: 525f186c6c471684dbb8235572bb9271,
         type: 3}
       propertyPath: _name
-      value: Esc
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525f186c6c471684dbb8235572bb9271, type: 3}
