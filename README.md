@@ -11,11 +11,11 @@ Put them in place before it steals them all!
 This game is part of the [Global Game Jam 2020](https://globalgamejam.org/2020/games/key-hen-0), made in M&aacute;laga, in the [MálagaJam Weekend 11](https://malagajam.com/), this little game wasn't been posible without them 💖.
 
 ## Who made this?
-Juan F. Benitez	(@JuanFCrater) 🕹️💻  
+Juan F. Benítez	(@JuanFCrater) 🕹️💻  
 [Ichio](https://juanfcrater.itch.io/) - [Github](https://github.com/JuanFranCrater) - [Twitter](https://twitter.com/JuanFCrater)  
 Guillermo Vera (@vfguille96) 💻⌨️  
 [Github](https://github.com/vfguille96)  
-Eduardo Fernandez (@EduFdezSoy) 💻⌨️  
+Eduardo Fernández (@EduFdezSoy) 💻⌨️  
 [Github](https://github.com/edufdezsoy) - [Twitter](https://twitter.com/edufdezsoy)  
-Manuel (Xim) Jimenez (@xim__design) ✒️  
+Manuel (Xim) Jiménez (@xim__design) ✒️  
 [Instagram](https://www.instagram.com/xim__design/)  

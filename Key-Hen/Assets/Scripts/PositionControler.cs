@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PositionControler : MonoBehaviour
 {
@@ -24,17 +21,37 @@ public class PositionControler : MonoBehaviour
 
     public int isFilledOut(Key keycode)
     {
+        while (true)
+        {
+            if (hasSpace())
+            {
+                int r = UnityEngine.Random.Range(0, filledPositions.Length);
+                
+                if (!filledPositions[r])
+                {
+                    fillSpace(r);
+                    fillKeyCode(r, keycode._name);
+                    keycode.moveTo(positions[r].position);
+
+                    return r;
+                }
+            } else
+            {
+                return -1;
+            }
+        }
+    }
+
+    private bool hasSpace()
+    {
         for (int i = 0; i < filledPositions.Length; i++)
         {
             if (!filledPositions[i])
             {
-                fillSpace(i);
-                fillKeyCode(i, keycode._name);
-                keycode.moveTo(positions[i].position);
-                return i;
+                return true;
             }
         }
-        return -1;
+        return false;
     }
 
     private void fillKeyCode(int pos, string keycode)
@@ -52,7 +69,6 @@ public class PositionControler : MonoBehaviour
         keycode.moveToPad();
         for (int i = 0; i < filledKeycode.Length; i++)
         {
-            Debug.Log(i);
 
             if (filledKeycode[i] != null && filledKeycode[i].Equals(keycode._name))
             {
@@ -64,7 +80,8 @@ public class PositionControler : MonoBehaviour
                     GameManager.instance.takeDamage();
                     keycode.outOfGame();
                 }
-                else {
+                else
+                {
 
                     keycode.moveToPad();
                 }

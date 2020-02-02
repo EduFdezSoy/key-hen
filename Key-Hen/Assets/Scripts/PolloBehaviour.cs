@@ -16,6 +16,8 @@ public class PolloBehaviour : MonoBehaviour
 
     // getters and setters
     public Vector3 Destino { get => destino; set => destino = value; }
+    public Key keycode;
+    public int position;
 
     public  KeyboardController keyboardController;
 
@@ -39,19 +41,29 @@ public class PolloBehaviour : MonoBehaviour
         newVector.x = transform.position.x;
         newVector.z = transform.position.z;
 
-   // Debug.Log(Vector3.Distance(transform.position, Destino));
-    //    Debug.Log((movement * 2));
+         // Debug.Log(Vector3.Distance(transform.position, Destino));
+         //    Debug.Log((movement * 2));
 
         // MOVE BERD
         Vector3 desp = Vector3.MoveTowards(transform.position, Destino, Time.deltaTime * movement) - transform.position;
         transform.position += desp;
+
+        if (Vector3.Distance(transform.position, Destino) < 0.2f)
+        {
+            StartCoroutine(TakeKey());
+        }
 
         yield return new WaitForSeconds(timeToMove);
         StartCoroutine(MoveDuck());
     }
     private IEnumerator TakeKey()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
+        if (keycode != null)
+        {
+            keycode.moveOut();
+            keyboardController.dropOutKey(position);
+        }
     }
 
     /// Bigger the time, more probabilities to change the bird mind

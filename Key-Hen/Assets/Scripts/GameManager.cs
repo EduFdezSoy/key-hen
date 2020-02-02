@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI _txtPoints;
     //Points of sesion
     private float _points;
+    private float timeScale = 1;
 
     public float Health { get => _health; set => _health = value; }
     public float Points { get => _points; set => _points = value; }
@@ -105,6 +106,11 @@ public class GameManager : MonoBehaviour
             updateUI();
             yield return new WaitForSecondsRealtime(1f);
             gameTime++;
+            if (gameTime % 10 == 0)
+            {
+                timeScale += 1f;
+                Time.timeScale = timeScale;
+            }
         }
         StartCoroutine(TimeCounter());
     }
@@ -118,9 +124,8 @@ public class GameManager : MonoBehaviour
     public void SetGameOver(bool gameOver)
     {
         _gameOver = gameOver;
-        Time.timeScale = gameOver ? 0 : 1;
+        Time.timeScale = gameOver ? 0 : timeScale;
         _deathPanel.SetActive(gameOver);
-        GetComponent<AudioSource>().Stop();
     }
     //Pauses game
     public void SetPauseGame(bool pause)
@@ -128,7 +133,7 @@ public class GameManager : MonoBehaviour
         if (!_deathPanel.activeSelf)
         {
             _paused = pause;
-            Time.timeScale = pause ? 0 : 1;
+            Time.timeScale = pause ? 0 : timeScale;
             _pausePanel.SetActive(pause);
         }
     }
