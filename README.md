@@ -1,25 +1,21 @@
-# key-hen
+<p align="center">
+<a href="https://globalgamejam.org/2020/games/key-hen-0"><img src="https://raw.githubusercontent.com/EduFdezSoy/key-hen/master/key-hen_logo.png" width="300px" alt="key-hen_logo"></a>
+<h1 align="center" style="margin: 20px; margin-top: -50px; text-align: center;">Key Hen
+</h1></p>
+<p align="center">
+A freaking hen is stealing your keys!
+<br>
+Put them in place before it steals them all!
+</p>
+  
+This game is part of the [Global Game Jam 2020](https://globalgamejam.org/2020/games/key-hen-0), made in M&aacute;laga, in the [MálagaJam Weekend 11](https://malagajam.com/), this little game wasn't been posible without them 💖.
 
-a freaking berd steal your keys
-
-## TODO:
-- [ ] berds looking in different ways (at least one)
-- [ ] game interface (counters, health)
-- [ ] menus
-- [ ] menus logics
-- [ ] berd logic (very inteligent, much berd)
-- [ ] key logic (when our berd steals a key)
-- [ ] players logic
-- [ ] interface logic (helth, time and that)
-- [ ] integration tests? (this wont work)
-- [ ] sounds
-- [ ] music
-
-
-*coffee*
-
-
-## easter eggs
-- [ ] if you click on the chick it will rage
-- [ ] if you write bird, berd, chick, hen, cuak, duck...
-- [ ] if you click multiple times to the berd a lot of chickens appears (like all zelda titles)
+## Who made this?
+Juan F. Benitez	(@JuanFCrater) 🕹️💻  
+[Ichio](https://juanfcrater.itch.io/) - [Github](https://github.com/JuanFranCrater) - [Twitter](https://twitter.com/JuanFCrater)  
+Guillermo Vera (@vfguille96) 💻⌨️  
+[Github](https://github.com/vfguille96)  
+Eduardo Fernandez (@EduFdezSoy) 💻⌨️  
+[Github](https://github.com/edufdezsoy) - [Twitter](https://twitter.com/edufdezsoy)  
+Manuel (Xim) Jimenez (@xim__design) ✒️  
+[Instagram](https://www.instagram.com/xim__design/)  
