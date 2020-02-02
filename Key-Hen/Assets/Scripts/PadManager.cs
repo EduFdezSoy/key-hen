@@ -16,7 +16,7 @@ public class PadManager : PositionControler
     {
         for (int i = 0; filledKeycode.Length > i; i++)
         {
-            if (filledKeycode[i] != null&& filledKeycode[i] != "" && Input.GetKeyDown(filledKeycode[i].ToLower()))
+            if (filledKeycode[i] != null && filledKeycode[i] != "" && Input.GetKeyDown(filledKeycode[i].ToLower()))
             {
                 for (int j = 0; j < listado.Length; j++)
                 {
