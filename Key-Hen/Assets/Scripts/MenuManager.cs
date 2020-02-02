@@ -20,6 +20,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Opciones");
     }
 
+    public void GotoAbout()
+    {
+        SceneManager.LoadScene("About");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
