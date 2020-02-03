@@ -4812,6 +4812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pausePanel: {fileID: 1459478801}
   _deathPanel: {fileID: 966640669}
+  _howToPanel: {fileID: 275120692}
   _musicManager: {fileID: 0}
   _startWait: 0
   imageHealth: {fileID: 191219931}

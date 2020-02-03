@@ -14,7 +14,7 @@ public class HowToPlay : MonoBehaviour
     {
         gameObject.active = false;
         GameManager.instance.
-            SetPauseGame(false);
+        SetPauseGame(false);
         GameManager.instance.startRound();
     }
 }

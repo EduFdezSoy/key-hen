@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     //Panel of paused states and states boolens
     public GameObject _pausePanel;
     public GameObject _deathPanel;
+    public GameObject _howToPanel;
     private bool _paused = false;
     private bool _gameOver = false;
     //Game Health
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     //Points of sesion
     private float _points;
     private float timeScale = 1;
+    private bool juegoEmpezado = false;
 
     public float Health { get => _health; set => _health = value; }
     public float Points { get => _points; set => _points = value; }
@@ -108,6 +110,7 @@ public class GameManager : MonoBehaviour
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(_startWait);
+        juegoEmpezado = true;
         //TODO: Logica de juego, referencia a Pajaro para iniciar su movimiento y el del juegador
         Time.timeScale = 1;
         StartContador();
@@ -141,8 +144,13 @@ public class GameManager : MonoBehaviour
     //Updates, you know. That one
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SetPauseGame(!_paused);
+        if (juegoEmpezado)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetPauseGame(!_paused);
+            }
+        }
     }
     //Sets the game to game over, pausing time 
     public void SetGameOver(bool gameOver)
