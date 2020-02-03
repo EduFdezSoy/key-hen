@@ -102,11 +102,10 @@ public class GameManager : MonoBehaviour
     private void updateUI()
     {
         imageHealth.fillAmount = Health / 3;
-        // Debug.Log(Health/3f);
-        _txtTiempo.text = gameTime.ToString() + " s";
+        _txtTiempo.text = gameTime + " s";
         _txtPoints.text = Points + " pts";
     }
-    //This corustine called when game is gonna start
+    //This corutine called when game is gonna start
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(_startWait);
