@@ -12,7 +12,7 @@ This game is part of the [Global Game Jam 2020](https://globalgamejam.org/2020/g
 
 ## Who made this?
 Juan F. Benítez	(@JuanFCrater) 🕹️💻  
-[Ichio](https://juanfcrater.itch.io/) - [Github](https://github.com/JuanFranCrater) - [Twitter](https://twitter.com/JuanFCrater)  
+[itch.io](https://juanfcrater.itch.io/) - [Github](https://github.com/JuanFranCrater) - [Twitter](https://twitter.com/JuanFCrater)  
 Guillermo Vera (@vfguille96) 💻⌨️  
 [Github](https://github.com/vfguille96)  
 Eduardo Fernández (@EduFdezSoy) 💻⌨️  
