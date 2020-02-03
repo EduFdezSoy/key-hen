@@ -48,12 +48,11 @@ public class GameManager : MonoBehaviour
         _listadoTeclas = new List<GameObject>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void startRound()
     {
-        SetPauseGame(false);
         StartCoroutine(StartGame());
     }
+
 
     //Add points
     public void addPoints()
